@@ -68,4 +68,15 @@ class User extends Authenticatable
 
         return $this->hasOne('App\Models\Profile');
     }
+
+    // Relación uno a muchos
+    public function posts()
+    {
+        return $this->hasMany('App\Models\Post');
+    }
+
+    public function videos()
+    {
+        return $this->hasMany('App\Models\Video');
+    }
 }
