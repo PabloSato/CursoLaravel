@@ -31,4 +31,10 @@ class Post extends Model
     {
         return $this->morphMany('App\Models\Comment', 'comentable');
     }
+
+    // Relación muchos a muchos polimorfica
+    public function posts()
+    {
+        return $this->morphToMany('App\Models\Tag', 'taggable');
+    }
 }
