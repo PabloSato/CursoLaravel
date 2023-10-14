@@ -19,4 +19,10 @@ class Post extends Model
     {
         return $this->belongsTo('App\Models\Categoria');
     }
+
+    // Relación 1 a 1 polimórfica
+    public function image()
+    {
+        return $this->morphOne('App\Models\Image', 'imageable');
+    }
 }
