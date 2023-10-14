@@ -5,19 +5,19 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Video extends Model
+class Comment extends Model
 {
     use HasFactory;
 
-    // Relación uno a muchos (inversa)
+    // Relacion uno a muchos inversa
     public function user()
     {
         return $this->belongsTo('App\Models\User');
     }
 
-    // Relacion uno a muchos polimorfica
-    public function comments()
+    // Relación polimórfica
+    public function commentable()
     {
-        return $this->morphMany('App\Models\Comment', 'comentable');
+        return $this->morphTo();
     }
 }
