@@ -3,6 +3,7 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -58,4 +59,13 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+
+    // Relación uno a uno, recuperamos el perfil que corresponde al usuario
+    public function profile()
+    {
+        //$profile = Profile::where('user_id', $this->id)->first();
+
+        return $this->hasOne('App\Models\Profile');
+    }
 }
