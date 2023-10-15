@@ -30,6 +30,6 @@ class Post extends Model
     // Relación uno a uno
     public function image()
     {
-        return $this->morphOne('App\Models\Image', 'image');
+        return $this->morphOne('App\Models\Image', 'imageable');
     }
 }

@@ -19,6 +19,7 @@ class TagFactory extends Factory
         return [
             'name'      => $this->faker->unique()->word(20),
             'slug'      => $this->faker->slug(),
+            'color'     => $this->faker->randomElement(['zink', 'red', 'white', 'yellow', 'amber', 'lime', 'green']),
         ];
     }
 }
