@@ -12,7 +12,8 @@
                                     class="inline-block px-2 h-6 bg-{{ $tag->color }}-600 text-white rounded-full">{{ $tag->name }}</a>
                             @endforeach
                         </div>
-                        <h1 class="text-4xl text-white leading-8 font-bold"><a href="#">{{ $post->name }}</a></h1>
+                        <h1 class="text-4xl text-white leading-8 font-bold"><a
+                                href="{{ route('posts.show', $post) }}">{{ $post->name }}</a></h1>
                     </div>
                 </article>
             @endforeach
