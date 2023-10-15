@@ -3,7 +3,6 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
-
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -60,40 +59,9 @@ class User extends Authenticatable
         'profile_photo_url',
     ];
 
-
-    // Relación uno a uno, recuperamos el perfil que corresponde al usuario
-    public function profile()
-    {
-        //$profile = Profile::where('user_id', $this->id)->first();
-
-        return $this->hasOne('App\Models\Profile');
-    }
-
-    // Relación uno a muchos
+    // RELACIONES UNO A MUCHOS
     public function posts()
     {
         return $this->hasMany('App\Models\Post');
-    }
-
-    public function videos()
-    {
-        return $this->hasMany('App\Models\Video');
-    }
-
-    public function comments()
-    {
-        return $this->hasMany('App\Models\Comment');
-    }
-
-    // Relación muchos a muchos
-    public function roles()
-    {
-        return $this->belongsToMany('App\Models\Role');
-    }
-
-    // Relación 1 a 1 polimórfica
-    public function image()
-    {
-        return $this->morphOne('App\Models\Image', 'imageable');
     }
 }

@@ -5,13 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Image extends Model
+class Category extends Model
 {
     use HasFactory;
 
-    // RELACIÓN POLIMÓRFICA
-    public function imageable()
+    // RELACIONES UNO A MUCHOS
+    public function posts()
     {
-        return $this->morphTo();
+        return $this->hasMany('App\Models\Post');
     }
 }

@@ -9,32 +9,27 @@ class Post extends Model
 {
     use HasFactory;
 
-    // Relación uno a muchos inversa
+    // RELACIONES UNO A MUCHOS (INVERSA)
     public function user()
     {
         return $this->belongsTo('App\Models\User');
     }
 
-    public function categoria()
+    public function category()
     {
-        return $this->belongsTo('App\Models\Categoria');
+        return $this->belongsTo('App\Models\Category');
     }
 
-    // Relación 1 a 1 polimórfica
+    // RELACIONES MUCHOS A MUCHOS
+    public function tags()
+    {
+        return $this->belongsToMany('App\Models\Tag');
+    }
+
+    // RELACIONES POLIMÓRFICAS
+    // Relación uno a uno
     public function image()
     {
         return $this->morphOne('App\Models\Image', 'imageable');
-    }
-
-    // Relacion uno a muchos polimorfica
-    public function comments()
-    {
-        return $this->morphMany('App\Models\Comment', 'comentable');
-    }
-
-    // Relación muchos a muchos polimorfica
-    public function posts()
-    {
-        return $this->morphToMany('App\Models\Tag', 'taggable');
     }
 }

@@ -9,14 +9,9 @@ class Tag extends Model
 {
     use HasFactory;
 
-    // Relacion muchos a muchos polimorfica inversa
+    // RELACIONES MUCHOS A MUCHOS
     public function posts()
     {
-        return $this->morphedByMany('App\Models\Post', 'taggable');
-    }
-
-    public function videos()
-    {
-        return $this->morphedByMany('App\Models\Video', 'taggable');
+        return $this->belongsToMany('App\Models\Post');
     }
 }

@@ -20,4 +20,8 @@ export default {
     },
 
     plugins: [forms, typography],
+    /** ESTO ES PARA DESACTIVAR CLASES DE ESTILOS Y PODER SOBREESCRIBIRLOS */
+    corePlugins: {
+        container: false
+    }
 };
