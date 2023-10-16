@@ -57,6 +57,8 @@
                                 tabindex="-1">
                                 <a href="{{ route('profile.show') }}" class="block px-4 py-2 text-sm text-gray-700"
                                     role="menuitem" tabindex="-1" id="user-menu-item-0">Tu Perfil</a>
+                                <a href="{{ route('admin.home') }}" class="block px-4 py-2 text-sm text-gray-700"
+                                    role="menuitem" tabindex="-1" id="user-menu-item-0">Dashboard</a>
                                 {{-- PARA QUE FUNCIONE EL LINK PARA LOGOUT HAY QUE HACER DENTRO DE UN FORMULARIO (QUE ES PETICIÖN POST)
                                         HAY QUE PASAR EL CSRF, LA RUTA Y EL EVENTO CLICK PARA EL PREVENT DEFAULT RARO --}}
                                 <form method="POST" action="{{ route('logout') }}" x-data>
