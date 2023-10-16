@@ -7,15 +7,24 @@
 @stop
 
 @section('content')
-    <p>Esto será mi contenido</p>
-@stop
+    {{-- ESTO VA CON LARAVEL COLLECTIVE 6.... OJITO --}}
+    <div class="card">
+        <div class="card-body">
+            {!! Form::open(['route' => 'admin.categories.store']) !!}
 
-@section('css')
-    <link rel="stylesheet" href="/css/admin_custom.css">
-@stop
+            <div class="form-group">
+                {!! Form::label('name', 'Nombre') !!}
+                {!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'ingrese el nombre de la categoria']) !!}
+            </div>
 
-@section('js')
-    <script>
-        console.log('Hi!');
-    </script>
+            <div class="form-group">
+                {!! Form::label('slug', 'Slug') !!}
+                {!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'ingrese el slug de la categoria']) !!}
+            </div>
+
+            {!! Form::submit('Crear Categoria', ['class' => 'btn btn-primary']) !!}
+
+            {!! Form::close() !!}
+        </div>
+    </div>
 @stop
